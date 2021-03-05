@@ -6,7 +6,7 @@ mot de passes chiffrés des utilisateurs ainsi que quelques informations sur l'a
 <p style="border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; padding: 10px 0px;">
 <b>username:password:UID:GID:full_name:directory:shell</b>
 </p>
-<h5>Structure du fichier</h5>
+<h4>Structure du fichier</h4>
 <p><b>username</b><br>
 Nom de l'utilisateur<br>
 <b>password</b><br>
@@ -52,6 +52,7 @@ Voici mon fichier python : <a href="">url</a>
 <li>Comparaison des hash entre les deux fichier, si ça match un mot de passe est trouvée.</li>
 <li>Le tour est joué!</li>
 </ul>
+<hr>
 <h3>Avantage et inconvénients</h3>
 <p>Chaque méthode posséde une certaine effacité mais amene aussi beaucoup de contraintes :</p>
 <h5>Attaque par Brute force</h5>
