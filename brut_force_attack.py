@@ -1,5 +1,8 @@
 import re, itertools, hashlib, sys, datetime
 
+
+
+start=datetime.datetime.now()
 maxLength = 5
 minLength = 3
 string=""
@@ -15,13 +18,15 @@ def redo(string,size):
             if minLength <= len(string):
                 current_hash=hashlib.md5(calcString.encode('utf')).hexdigest()
                 if current_hash in users.values():
-                    print('mot de passe trouve \'{}\' pour l\'utilisateur {}'.format(calcString, ','.join(i for i in users if users[i] == current_hash)))
+                    time = datetime.datetime.now() - start;
+                    print('mot de passe trouve en '+time+' \'{}\' pour l\'utilisateur {}'.format(calcString, ','.join(i for i in users if users[i] == current_hash)))
 
 
 with open('shadow', 'r') as f:
     lines = f.readlines()
 
 users = {}
+
 for line in lines:
    try:
       user, user_hash = re.findall('^([^:]+):\$1\$([^:]+):.+', line)[0]
@@ -30,6 +35,7 @@ for line in lines:
    else:
       users[user] = user_hash
 
-print('\n'+str(len(users))+' Mot de passe chiffré sous MD5 trouvé (entre '+str(minLength+1)+' et '+str(maxLength+1)+' caractères), déchiffrage en cours ...\n')
+print('\n'+str(len(users))+' Mot de passe chiffré sous MD5 trouvé (entre '+str(minLength+1)+' et '+str(maxLength+1)+' caractères), dechiffrage en cours...\n')
+sys.stdout = open('dictionary_decrypt', 'w')
 redo(string,size)
 

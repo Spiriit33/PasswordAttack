@@ -1,5 +1,7 @@
 import re, itertools, hashlib, sys
 
+
+
 with open('shadow', 'r') as s:
    lines = s.readlines()
 
@@ -14,7 +16,9 @@ for line in lines:
 
 with open('dico_mini_fr', 'r') as d:
    lines = d.readlines()
-
+   
+   
+sys.stdout = open('dictionary_decrypt', 'w')
 for line in lines:
     word = line.strip()
     userHash = hashlib.md5(word.encode('utf')).hexdigest() #Pour chaque ligne on hash le mot.
