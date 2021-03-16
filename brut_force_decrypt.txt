@@ -1,0 +1,2 @@
+mot de passe trouve 'brazil' pour l'utilisateur giselle
+mot de passe trouve 'bidon' pour l'utilisateur fred
